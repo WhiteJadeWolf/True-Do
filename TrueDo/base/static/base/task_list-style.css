@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Moirai+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: #e7e7e7;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+.image-gradient-bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.layer-blur-bottom-left {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    box-shadow: 0 0 700px 15px white;
+    transform: rotate(-30deg);
+    z-index: -1;
+}
+
+.image-gradient-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.layer-blur-top-right {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px white;
+    transform: rotate(-30deg);
+    z-index: -1;
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    background-color: rgba(208, 206, 204, 0.08);
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    animation: fadeSlideIn 0.8s ease forwards;
+}
+
+h1.user {
+    height: auto;
+    font-family: "Moirai One", system-ui;
+    color: #c12d52;
+    font-size: 4rem;
+    text-align: left;
+}
+
+h2 {
+    color: #e1dbb1;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-left: 0.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.user-logout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.logout-btn {
+    background-color: #c12d52;
+    color: white;
+    border: none;
+    padding: 0.7rem 2.7rem;
+    border-radius: 0.4rem;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.3rem;
+    font-style: bold;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    color: #9f1f3f;
+    background-color: #d1cb9d;
+}
+
+.search-form {
+    margin-top: 2rem;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-wrapper input[type="text"] {
+    width: 100%;
+    height: 3rem;
+    padding: 0.6rem 3rem 0.6rem 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid #e1dbb194;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.search-wrapper input[type="text"]:hover {
+    border-radius: 0.8rem;
+    border: 1px solid #c12d52;
+}
+
+.search-wrapper .search-btn {
+    position: absolute;
+    top: 55%;
+    right: 0.4rem;
+    transform: translateY(-55%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+.search-wrapper .search-btn:hover svg {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+.add-task {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.addtask-btn {
+    background-color: #c12d52;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 0.4rem;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0.5rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.addtask-btn:hover {
+    color: #e1dbb1;
+    background-color: #a0203f;
+}
+
+input[type="text"] {
+    padding: 0.6rem;
+    border-radius: 0.4rem;
+    border: 1px solid #aaa;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: white;
+    margin-right: 0.5rem;
+    width: 87%;
+}
+
+table {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+thead tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th,
+td {
+    padding: 1rem 0;
+    vertical-align: middle;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.completed-task {
+    text-decoration: line-through;
+    color: #888888;
+}
+
+td.task-options {
+    text-align: right;
+    padding-right: 1.5rem;
+    padding-left: 1rem;
+}
+
+td.task-options a {
+    display: inline-block;
+    margin-left: 2.85rem;
+    vertical-align: middle;
+}
+
+
+td.task-options a:hover svg {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+th {
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: underline;
+    text-underline-offset: 7.5px;
+    text-decoration-color: #e1dbb194;
+    font-family: "Righteous", sans-serif;
+    font-size: 2rem;
+    color: #c12d52;
+    font-weight: 300;
+}
+
+th.options-heading {
+    text-align: center;
+}
+
+th:first-child {
+    width: 70%;
+    text-align: left;
+    padding-left: 2rem;
+}
+
+td:first-child {
+    width: 60%;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+th:last-child {
+    width: 30%;
+    text-align: right;
+    padding-right: 2.9rem;
+}
+
+td:last-child {
+    width: 40%;
+    padding-right: 1.1rem;
+}
+
+h3 {
+    text-align: center;
+    color: #999;
+    margin-top: 2rem;
+    font-weight: 300;
+}

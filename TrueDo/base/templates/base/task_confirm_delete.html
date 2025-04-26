@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="{% static 'base/task_confirm_delete-style.css' %}">
+    <title>TrueDo | Confirm Task Deletion</title>
+</head>
+<body>
+    <img class="image-gradient-bottom-left" src="{% static 'base/gradient.png' %}" alt="gradientBL">
+    <div class="layer-blur-bottom-left"></div>
+    <img class="image-gradient-top-right" src="{% static 'base/gradient.png' %}" alt="gradientTR">
+    <div class="layer-blur-top-right"></div>
+    <div class="container">
+        <h1 class="user">Confirm Deletion</h1>
+        <hr>
+        <p class="confirmation-message">Are you sure you want to DELETE the task: <strong>"{{ task }}"</strong>&nbsp;?</p>
+
+        <form method="POST" class="confirmation-form">
+            {% csrf_token %}
+            <div class="confirmation-buttons">
+                <a href="{% url 'tasks' %}" class="cancel-btn">Cancel</a>
+                <input type="submit" value="Delete" class="delete-btn">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

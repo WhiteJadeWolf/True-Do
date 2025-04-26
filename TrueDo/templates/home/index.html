@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Home | TrueDo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href="{% static 'home/style.css' %}">
+</head>
+
+<body>
+    <img class="image-gradient-bottom-left" src="{% static 'home/gradient.png' %}" alt="gradientBL">
+    <div class="layer-blur-bottom-left"></div>
+    <img class="image-gradient-top-right" src="{% static 'home/gradient.png' %}" alt="gradientTR">
+    <div class="layer-blur-top-right"></div>
+    <div class="container">
+        <main>
+            <div class="content">
+                <div class="tag-box">
+                    <div class="tag">PRESENTING</div>
+                </div>
+                <h1>TRUE - DO</h1>
+                <h2>A SIMPLE To-Do Manager made for YOU</h2>
+                <p class="description">
+                    True-Do is no headache...<br>A Simple, Effective and Minimalist To-Do List Website<br>designed with pure functionality in mind.<br>It does just what you'd expect... No Extra Mess.
+                </p>
+                <div class="btn-container">
+                    <a type="submit" class="btn-getstarted" href="{% url 'signup' %}">GET STARTED &gt;</a>
+                </div>
+            </div>
+        </main>
+        <spline-viewer class="radial-pattern" loading-anim-type="spinner-small-light" url="https://prod.spline.design/kdK4u6GsKpNxEVRe/scene.splinecode"></spline-viewer>
+    </div>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.86/build/spline-viewer.js"></script>
+</body>
+</html>

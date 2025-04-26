@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: #e7e7e7;
+    min-height: 100vh;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.image-gradient-bottom-left,
+.image-gradient-top-right {
+    position: absolute;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.image-gradient-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.layer-blur-bottom-left {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    box-shadow: 0 0 700px 15px white;
+    transform: rotate(-30deg);
+    z-index: -1;
+}
+
+.image-gradient-top-right {
+    top: 0;
+    right: 0;
+}
+
+.layer-blur-top-right {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px white;
+    transform: rotate(-30deg);
+    z-index: -1;
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: rgba(208, 206, 204, 0.08);
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+    animation: fadeSlideIn 0.8s ease forwards;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-family: "Righteous", sans-serif;
+    font-size: 2.5rem;
+    color: #c12d52;
+}
+
+.edit-btn {
+    background-color: #c12d52;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #a0203f;
+    color: #e1dbb1;
+}
+
+.task-detail {
+    margin-bottom: 2rem;
+}
+
+.task-detail h3 {
+    font-size: 1.5rem;
+    color: #e1dbb1;
+    margin-bottom: 0.8rem;
+}
+
+.task-detail p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.no-description {
+    font-style: italic;
+    color: #999;
+}
+
+.task-meta {
+    margin-bottom: 2rem;
+}
+
+.task-meta p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.task-meta p strong {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: #e1dbb1;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.action-btn {
+    background-color: #c12d52;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #a0203f;
+    color: #e1dbb1;
+}
+
+.action-btn.delete {
+    color: white;
+    background-color: #c12d52;
+}
+
+.action-btn.delete:hover {
+    color: #9f1f3f;
+    background-color: #d1cb9d;
+}
+
+.action-btn.back {
+    border: 2px solid #6b6b6b;
+    background-color: #6b6b6b;
+}
+
+.action-btn.back:hover {
+    background-color: #888;
+}

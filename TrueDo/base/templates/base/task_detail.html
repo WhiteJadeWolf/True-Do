@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueDo | Task Details</title>
+    <link rel="stylesheet" href="{% static 'base/task_detail-style.css' %}">
+</head>
+<body>
+    <img class="image-gradient-bottom-left" src="{% static 'base/gradient.png' %}" alt="gradientBL">
+    <div class="layer-blur-bottom-left"></div>
+    <img class="image-gradient-top-right" src="{% static 'base/gradient.png' %}" alt="gradientTR">
+    <div class="layer-blur-top-right"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">{{ task.title }}</h1>
+            <a href="{% url 'task-edit' task.id %}" class="edit-btn">Edit Task</a>
+        </div>
+
+        <div class="task-detail">
+            <h3>Description : &nbsp;</h3>
+            {% if task.description %}
+                <p>{{ task.description }}</p>
+            {% else %}
+                <p class="no-description">No description provided.</p>
+            {% endif %}
+        </div>
+
+        <div class="task-meta">
+            <p><strong>Status : &nbsp;</strong> {% if task.complete %}Completed ✅{% else %}Incomplete ❌{% endif %}</p>
+            <p><strong>Created : &nbsp;</strong> {{ task.create|date:"F j, Y, g:i A" }}</p>
+        </div>
+
+        <div class="actions">
+            <a href="{% url 'task-delete' task.id %}" class="action-btn delete">Delete</a>
+            <a href="{% url 'tasks' %}" class="action-btn back">Back to List</a>
+        </div>
+    </div>
+</body>
+</html>
